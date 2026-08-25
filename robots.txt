@@ -1,4 +1,16 @@
 User-agent: *
 Allow: /
 
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
 Sitemap: https://jlc-one.vercel.app/sitemap.xml
