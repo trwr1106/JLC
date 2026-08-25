@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://trwr1106.github.io/JLC/</loc>
+    <loc>https://jlc-one.vercel.app/</loc>
     <lastmod>2026-08-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://trwr1106.github.io/JLC/guides/</loc>
+    <loc>https://jlc-one.vercel.app/guides/</loc>
     <lastmod>2026-08-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://trwr1106.github.io/JLC/guides/bank-account.html</loc>
+    <loc>https://jlc-one.vercel.app/guides/bank-account.html</loc>
     <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://trwr1106.github.io/JLC/guides/apartment-rental.html</loc>
+    <loc>https://jlc-one.vercel.app/guides/apartment-rental.html</loc>
     <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://trwr1106.github.io/JLC/guides/mobile-wifi.html</loc>
+    <loc>https://jlc-one.vercel.app/guides/mobile-wifi.html</loc>
     <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://trwr1106.github.io/JLC/guides/transportation.html</loc>
+    <loc>https://jlc-one.vercel.app/guides/transportation.html</loc>
     <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://trwr1106.github.io/JLC/guides/garbage-sorting.html</loc>
+    <loc>https://jlc-one.vercel.app/guides/garbage-sorting.html</loc>
     <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://trwr1106.github.io/JLC/sitemap.xml
+Sitemap: https://jlc-one.vercel.app/sitemap.xml
