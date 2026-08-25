@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 300" preserveAspectRatio="xMidYMax slice">
+  <!-- Tokyo Tower -->
+  <g stroke="#ff5a3c" stroke-width="3" fill="none" opacity="0.9">
+    <line x1="55" y1="300" x2="110" y2="15" />
+    <line x1="165" y1="300" x2="110" y2="15" />
+    <line x1="110" y1="15" x2="110" y2="0" />
+    <line x1="95.5" y1="90" x2="124.5" y2="90" />
+    <line x1="83.9" y1="150" x2="136.1" y2="150" />
+    <line x1="72.4" y1="210" x2="147.6" y2="210" />
+    <line x1="62.7" y1="260" x2="157.3" y2="260" />
+    <line x1="55" y1="300" x2="72.4" y2="210" />
+    <line x1="165" y1="300" x2="147.6" y2="210" />
+  </g>
+  <circle cx="110" cy="15" r="4" fill="#ff3b3b" />
+  <circle cx="110" cy="150" r="3" fill="#ff3b3b" opacity="0.85" />
+
+  <!-- City buildings -->
+  <g>
+    <rect x="220" y="170" width="55" height="130" fill="#0b1230" />
+    <rect x="280" y="110" width="55" height="190" fill="#111b3f" />
+    <rect x="340" y="200" width="55" height="100" fill="#0b1230" />
+    <rect x="400" y="70"  width="55" height="230" fill="#111b3f" />
+    <rect x="460" y="150" width="55" height="150" fill="#0b1230" />
+    <rect x="520" y="30"  width="55" height="270" fill="#111b3f" />
+    <rect x="580" y="190" width="55" height="110" fill="#0b1230" />
+    <rect x="640" y="100" width="55" height="200" fill="#111b3f" />
+    <rect x="700" y="140" width="55" height="160" fill="#0b1230" />
+    <rect x="760" y="60"  width="55" height="240" fill="#111b3f" />
+    <rect x="820" y="180" width="55" height="120" fill="#0b1230" />
+    <rect x="880" y="120" width="55" height="180" fill="#111b3f" />
+    <rect x="940" y="90"  width="55" height="210" fill="#0b1230" />
+    <rect x="1000" y="160" width="55" height="140" fill="#111b3f" />
+    <rect x="1060" y="50"  width="55" height="250" fill="#0b1230" />
+    <rect x="1120" y="195" width="55" height="105" fill="#111b3f" />
+    <rect x="1180" y="130" width="55" height="170" fill="#0b1230" />
+    <rect x="1240" y="80"  width="55" height="220" fill="#111b3f" />
+    <rect x="1300" y="165" width="55" height="135" fill="#0b1230" />
+    <rect x="1360" y="105" width="55" height="195" fill="#111b3f" />
+    <rect x="1420" y="185" width="55" height="115" fill="#0b1230" />
+    <rect x="1480" y="65"  width="55" height="235" fill="#111b3f" />
+    <rect x="1540" y="145" width="55" height="155" fill="#0b1230" />
+  </g>
+
+  <!-- Windows -->
+  <g fill="#ffd23f" opacity="0.75">
+    <rect x="230" y="190" width="6" height="6" /><rect x="248" y="210" width="6" height="6" /><rect x="260" y="185" width="6" height="6" />
+    <rect x="290" y="130" width="6" height="6" /><rect x="308" y="160" width="6" height="6" /><rect x="320" y="140" width="6" height="6" /><rect x="298" y="200" width="6" height="6" />
+    <rect x="410" y="100" width="6" height="6" /><rect x="428" y="140" width="6" height="6" /><rect x="440" y="90"  width="6" height="6" /><rect x="418" y="180" width="6" height="6" />
+    <rect x="530" y="60"  width="6" height="6" /><rect x="548" y="100" width="6" height="6" /><rect x="560" y="140" width="6" height="6" /><rect x="538" y="200" width="6" height="6" />
+    <rect x="650" y="130" width="6" height="6" /><rect x="668" y="160" width="6" height="6" /><rect x="680" y="190" width="6" height="6" />
+    <rect x="770" y="90"  width="6" height="6" /><rect x="788" y="130" width="6" height="6" /><rect x="800" y="170" width="6" height="6" /><rect x="778" y="210" width="6" height="6" />
+    <rect x="890" y="150" width="6" height="6" /><rect x="908" y="180" width="6" height="6" /><rect x="920" y="210" width="6" height="6" />
+    <rect x="1010" y="190" width="6" height="6" /><rect x="1028" y="220" width="6" height="6" /><rect x="1040" y="200" width="6" height="6" />
+    <rect x="1070" y="80"  width="6" height="6" /><rect x="1088" y="120" width="6" height="6" /><rect x="1100" y="160" width="6" height="6" /><rect x="1078" y="200" width="6" height="6" />
+    <rect x="1190" y="160" width="6" height="6" /><rect x="1208" y="190" width="6" height="6" /><rect x="1220" y="220" width="6" height="6" />
+    <rect x="1250" y="110" width="6" height="6" /><rect x="1268" y="150" width="6" height="6" /><rect x="1280" y="190" width="6" height="6" />
+    <rect x="1370" y="135" width="6" height="6" /><rect x="1388" y="165" width="6" height="6" /><rect x="1400" y="195" width="6" height="6" />
+    <rect x="1490" y="95"  width="6" height="6" /><rect x="1508" y="135" width="6" height="6" /><rect x="1520" y="175" width="6" height="6" /><rect x="1498" y="215" width="6" height="6" />
+  </g>
+</svg>
