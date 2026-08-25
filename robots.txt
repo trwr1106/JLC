@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://trwr1106.github.io/JLC/sitemap.xml
