@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact Us | Japan Life Community</title>
-<meta name="description" content="Get in touch with Japan Life Community. Our contact form is coming soon — reach us on Discord in the meantime.">
+<meta name="description" content="Get in touch with Japan Life Community — ask in Discord, send us a message, or email us directly.">
 
 <link rel="canonical" href="https://jlc-one.vercel.app/contact">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jlc-one.vercel.app/contact">
 <meta property="og:title" content="Contact Us | Japan Life Community">
-<meta property="og:description" content="Get in touch with Japan Life Community. Our contact form is coming soon — reach us on Discord in the meantime.">
+<meta property="og:description" content="Get in touch with Japan Life Community — ask in Discord, send us a message, or email us directly.">
 <meta property="og:site_name" content="Japan Life Community">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://jlc-one.vercel.app/assets/og-image.jpg">
@@ -20,7 +20,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Contact Us | Japan Life Community">
-<meta name="twitter:description" content="Get in touch with Japan Life Community. Our contact form is coming soon — reach us on Discord in the meantime.">
+<meta name="twitter:description" content="Get in touch with Japan Life Community — ask in Discord, send us a message, or email us directly.">
 <meta name="twitter:image" content="https://jlc-one.vercel.app/assets/og-image.jpg">
 
 <link rel="icon" type="image/png" href="../assets/favicon.png">
@@ -63,29 +63,121 @@
 </header>
 
 <main>
+
 <section class="section" id="article">
   <div class="container">
     <p class="breadcrumb fade-in"><a href="../index.html">Home</a> / Contact</p>
 
     <div class="article-header fade-in">
-      <h1>📬 Contact Us</h1>
-      <p class="article-meta">Coming Soon</p>
+      <h1>📬 Get in Touch</h1>
+      <p class="article-meta">We're Here to Help</p>
     </div>
 
-    <div class="article-body fade-in" style="text-align:center;">
-      <p>We're currently building a dedicated contact form. In the meantime, you can reach us by email or through our Discord community — a first consultation is always free.</p>
-      <p>Email: <a href="mailto:jplc0tr@gmail.com">jplc0tr@gmail.com</a></p>
+    <p class="section-intro fade-in">Have a question about life in Japan, our concierge services, or membership? Choose whichever option works best for you.</p>
 
-      <div class="article-cta">
-        <h3>Need to reach us?</h3>
-        <p>Message us anytime in the Japan Life Community on Discord.</p>
-        <a href="https://discord.gg/jplc" target="_blank" rel="noopener" class="btn btn-yellow">Message Us on Discord</a>
+    <div class="feature-grid fade-in" style="max-width:980px;margin:0 auto 64px;">
+      <div class="feature">
+        <span class="feature-icon">💬</span>
+        <h3>Ask in Discord</h3>
+        <p>Free community questions, answered by real people who've been there.</p>
+        <p style="margin:14px 0 0;"><a href="https://discord.gg/jplc" target="_blank" rel="noopener" class="guide-link">Join Discord →</a></p>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">✉️</span>
+        <h3>Send a Message</h3>
+        <p>Private inquiries about concierge services, membership, or partnerships.</p>
+        <p style="margin:14px 0 0;"><a href="#contact-form" class="guide-link">Go to Form ↓</a></p>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">📧</span>
+        <h3>Email Us</h3>
+        <p>For business inquiries, media, and partnership requests.</p>
+        <p style="margin:14px 0 0;"><a href="mailto:jplc0tr@gmail.com" class="guide-link">jplc0tr@gmail.com</a></p>
       </div>
     </div>
 
-    <p class="article-nav-back fade-in" style="text-align:center;"><a href="../index.html">← Back to home</a></p>
+    <div class="contact-grid fade-in" id="contact-form">
+      <div>
+        <h2 style="text-align:left;">Contact Form</h2>
+        <p class="section-intro" style="text-align:left;margin:0 0 24px;max-width:none;">Fill out the form and we'll get back to you as soon as we can.</p>
+
+        <form class="contact-form" id="contactForm">
+          <div class="form-field">
+            <label for="cf-name">Name</label>
+            <input type="text" id="cf-name" name="name" placeholder="Jane Smith" required>
+          </div>
+          <div class="form-field">
+            <label for="cf-email">Email</label>
+            <input type="email" id="cf-email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-field">
+            <label for="cf-topic">I'm interested in</label>
+            <select id="cf-topic" name="topic">
+              <option>General Question</option>
+              <option>Concierge Services</option>
+              <option>Premium Membership</option>
+              <option>Partnership</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" placeholder="Tell us a bit about what you need help with..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-yellow">Send Message</button>
+        </form>
+      </div>
+
+      <div class="contact-sidebar">
+        <div class="contact-side-card">
+          <h3>⏱️ Response Time</h3>
+          <p>We typically reply within 1-2 business days. Premium members receive priority responses.</p>
+        </div>
+        <div class="contact-side-card">
+          <h3>💬 Prefer Discord?</h3>
+          <p>For quick, casual questions, our community is often faster than a contact form.</p>
+          <a href="https://discord.gg/jplc" target="_blank" rel="noopener">Join Discord →</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+
+<section class="section section-alt" id="contact-faq">
+  <div class="container">
+    <h2 class="fade-in">Common Questions</h2>
+    <p class="section-intro fade-in">Before you reach out, a few quick answers.</p>
+
+    <div class="faq-list fade-in">
+      <details class="faq-item">
+        <summary>Is the community really free?</summary>
+        <p>Yes. Anyone can join our Discord and ask questions at no cost, forever.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How fast is concierge support?</summary>
+        <p>Most requests are scheduled within a few days, sooner for Premium members.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I cancel Premium anytime?</summary>
+        <p>Yes, cancel anytime before your next billing date — no long-term contract.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can you help with visas or immigration matters?</summary>
+        <p>We can't file applications or give legal advice on your case — that requires a licensed immigration lawyer (gyoseishoshi). But there's a lot we CAN do:</p>
+        <ul class="contact-checklist">
+          <li>Explain the general process and requirements in plain language</li>
+          <li>Help you organize and prepare your documents</li>
+          <li>Accompany you to your immigration bureau appointment</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="center-cta fade-in">
+      <p class="callout" style="margin-bottom:20px;">Still have questions? Join our Discord community and ask away — real answers from real people.</p>
+      <a href="https://discord.gg/jplc" target="_blank" rel="noopener" class="btn btn-yellow">Join Discord</a>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer class="site-footer">
@@ -125,6 +217,7 @@
           <input type="email" placeholder="Your email address" aria-label="Email address" required>
           <button type="submit">Sign Up</button>
         </form>
+        <p class="footer-newsletter-note">Have a question instead? <a href="mailto:jplc0tr@gmail.com">Email us directly</a>.</p>
         <div class="footer-social">
           <a href="https://discord.gg/jplc" target="_blank" rel="noopener">Discord</a>
           <a href="https://www.instagram.com/welcome2jlc/" target="_blank" rel="noopener">Instagram</a>
@@ -141,5 +234,20 @@
 </footer>
 
 <script src="../script.js"></script>
+<script>
+  var contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = document.getElementById('cf-name').value;
+      var email = document.getElementById('cf-email').value;
+      var topic = document.getElementById('cf-topic').value;
+      var message = document.getElementById('cf-message').value;
+      var subject = 'JLC Contact Form: ' + topic + ' — ' + name;
+      var body = 'Name: ' + name + '\nEmail: ' + email + '\nTopic: ' + topic + '\n\nMessage:\n' + message;
+      window.location.href = 'mailto:jplc0tr@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    });
+  }
+</script>
 </body>
 </html>

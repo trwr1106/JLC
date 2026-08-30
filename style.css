@@ -937,6 +937,116 @@ a.guide-card:hover {
   color: var(--white);
 }
 
+/* ---------- Contact page ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  align-items: start;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-field label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: var(--white);
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.form-field textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 0 3px rgba(47, 216, 255, 0.15);
+}
+
+.contact-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-side-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+
+.contact-side-card h3 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.contact-side-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0 0 12px;
+}
+
+.contact-side-card a {
+  color: var(--neon-cyan);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.contact-checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 10px 0 0;
+}
+
+.contact-checklist li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.contact-checklist li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--neon-cyan);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 800px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .tip-box {
   background: rgba(255, 233, 59, 0.06);
   border: 1px solid rgba(255, 233, 59, 0.3);
@@ -1086,6 +1196,12 @@ a.guide-card:hover {
 
 .footer-signup button:hover {
   background: #333333;
+}
+
+.footer-newsletter-note {
+  margin-top: 14px;
+  font-size: 13px;
+  color: #555555;
 }
 
 .footer-social {
