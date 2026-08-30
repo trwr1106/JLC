@@ -101,7 +101,12 @@
         <h2 style="text-align:left;">Contact Form</h2>
         <p class="section-intro" style="text-align:left;margin:0 0 24px;max-width:none;">Fill out the form and we'll get back to you as soon as we can.</p>
 
-        <form class="contact-form" id="contactForm">
+        <form class="contact-form" id="contactForm" action="https://formsubmit.co/jplc0tr@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New message from JLC Contact Form">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://jlc-one.vercel.app/contact?sent=true#contact-form">
+
           <div class="form-field">
             <label for="cf-name">Name</label>
             <input type="text" id="cf-name" name="name" placeholder="Jane Smith" required>
@@ -125,6 +130,7 @@
           </div>
           <button type="submit" class="btn btn-yellow">Send Message</button>
         </form>
+        <p id="contactSentNote" class="footer-newsletter-note" style="display:none;margin-top:14px;">✅ Message sent! We'll get back to you within 1-2 business days.</p>
       </div>
 
       <div class="contact-sidebar">
@@ -235,18 +241,11 @@
 
 <script src="../script.js"></script>
 <script>
-  var contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var name = document.getElementById('cf-name').value;
-      var email = document.getElementById('cf-email').value;
-      var topic = document.getElementById('cf-topic').value;
-      var message = document.getElementById('cf-message').value;
-      var subject = 'JLC Contact Form: ' + topic + ' — ' + name;
-      var body = 'Name: ' + name + '\nEmail: ' + email + '\nTopic: ' + topic + '\n\nMessage:\n' + message;
-      window.location.href = 'mailto:jplc0tr@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-    });
+  if (window.location.search.indexOf('sent=true') !== -1) {
+    var note = document.getElementById('contactSentNote');
+    if (note) { note.style.display = 'block'; }
+    var form = document.getElementById('contactForm');
+    if (form) { form.reset(); }
   }
 </script>
 </body>
