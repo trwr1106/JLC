@@ -62,4 +62,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  /* ---------- Newsletter signup confirmation ---------- */
+  /* After a successful FormSubmit POST, the visitor is redirected back
+     with ?subscribed=true — show a quick confirmation in the footer. */
+  if (window.location.search.indexOf('subscribed=true') !== -1) {
+    var newsletterCol = document.querySelector('.footer-newsletter');
+    var signupForm = document.querySelector('.footer-signup');
+    if (newsletterCol && signupForm) {
+      var note = document.createElement('p');
+      note.className = 'footer-newsletter-note';
+      note.textContent = '✅ Thanks for subscribing!';
+      newsletterCol.insertBefore(note, signupForm);
+    }
+    if (window.history && window.history.replaceState) {
+      var cleanUrl = window.location.pathname + window.location.hash;
+      window.history.replaceState(null, '', cleanUrl);
+    }
+  }
+
 });

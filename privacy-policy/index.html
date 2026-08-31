@@ -166,8 +166,12 @@
       <div class="footer-col footer-newsletter">
         <h4>Newsletter</h4>
         <p>Get the latest updates by email.</p>
-        <form class="footer-signup" onsubmit="return false;">
-          <input type="email" placeholder="Your email address" aria-label="Email address" required>
+        <form class="footer-signup" action="https://formsubmit.co/jplc0tr@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New Newsletter Signup — JLC">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://jlc-one.vercel.app/?subscribed=true#hero">
+          <input type="email" name="email" placeholder="Your email address" aria-label="Email address" required>
           <button type="submit">Sign Up</button>
         </form>
         <p class="footer-newsletter-note">Have a question instead? <a href="mailto:jplc0tr@gmail.com">Email us directly</a>.</p>
