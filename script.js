@@ -5,6 +5,41 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
+  /* ---------- Light / dark theme toggle ---------- */
+  /* The initial theme is already applied by the inline snippet in
+     <head> (before paint, to avoid a flash) — this just wires up the
+     button and keeps it in sync. */
+  var themeToggle = document.getElementById('themeToggle');
+  var themeToggleThumb = themeToggle ? themeToggle.querySelector('.theme-toggle-thumb') : null;
+
+  function isLightTheme() {
+    return document.documentElement.getAttribute('data-theme') === 'light';
+  }
+
+  function syncToggleUI() {
+    if (!themeToggle) return;
+    var light = isLightTheme();
+    themeToggle.setAttribute('aria-pressed', light ? 'true' : 'false');
+    themeToggle.setAttribute('aria-label', light ? 'Switch to dark theme' : 'Switch to light theme');
+    if (themeToggleThumb) {
+      themeToggleThumb.textContent = light ? '☀️' : '🌙';
+    }
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function () {
+      var next = isLightTheme() ? 'dark' : 'light';
+      if (next === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+      }
+      try { localStorage.setItem('jlc-theme', next); } catch (e) {}
+      syncToggleUI();
+    });
+    syncToggleUI();
+  }
+
   /* ---------- Mobile hamburger menu ---------- */
   var hamburger = document.getElementById('hamburger');
   var mobileNav = document.getElementById('mobile-nav');

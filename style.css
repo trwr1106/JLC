@@ -1,6 +1,8 @@
 /* =========================================================
    Japan Life Community — style.css
-   Theme: Neon Tokyo Night (dark navy/black + pink/cyan/yellow neon)
+   Theme: Neon Tokyo Night (default) + Light Day theme toggle
+   Dark: navy/black + pink/cyan/yellow neon
+   Light: ivory + navy + yellow + sky blue
    ========================================================= */
 
 :root {
@@ -11,11 +13,11 @@
   --border: rgba(255, 255, 255, 0.10);
   --border-strong: rgba(255, 255, 255, 0.18);
 
-  --white: #ffffff;
+  --surface-white: #ffffff; /* literal white surface (QR box) — never themed */
+  --white: #ffffff; /* heading / primary text — flips per theme */
   --text: #e7ebf7;
   --text-muted: #9aa5c4;
 
-  --navy: #ffffff; /* headings default to white in dark theme */
   --yellow: #ffe93b;
   --yellow-dark: #ffd400;
 
@@ -24,11 +26,62 @@
   --neon-purple: #b26bff;
   --neon-orange: #ff5a3c;
 
+  --glow-a: rgba(255, 46, 166, 0.16);
+  --glow-b: rgba(47, 216, 255, 0.14);
+
+  --hero-grad-a: #05060d;
+  --hero-grad-b: #0a1330;
+  --hero-grad-c: #05060d;
+  --card-grad-a: #0a1330;
+  --card-grad-b: #14204a;
+  --panel-glass: rgba(10, 15, 31, 0.7);
+  --header-bg: rgba(5, 7, 15, 0.9);
+  --skyline-img: url("assets/skyline.svg");
+  --inset-sheen: rgba(255, 255, 255, 0.05);
+
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
   --shadow-hover: 0 18px 44px rgba(0, 0, 0, 0.6);
   --radius: 16px;
   --radius-sm: 10px;
   --max-width: 1120px;
+}
+
+/* ---------- Light theme (toggle) ---------- */
+[data-theme="light"] {
+  --bg: #FFFDF5;
+  --bg-alt: #FFF6E0;
+  --bg-card: rgba(11, 31, 58, 0.04);
+  --bg-card-hover: rgba(11, 31, 58, 0.07);
+  --border: rgba(11, 31, 58, 0.12);
+  --border-strong: rgba(11, 31, 58, 0.22);
+
+  --white: #0b1f3a;
+  --text: #1c2b45;
+  --text-muted: #5b6b85;
+
+  --yellow: #ffc933;
+  --yellow-dark: #e8b400;
+
+  --neon-pink: #3fb8ef;
+  --neon-cyan: #1e88c7;
+  --neon-purple: #2f6fa8;
+  --neon-orange: #e8b400;
+
+  --glow-a: rgba(255, 204, 51, 0.28);
+  --glow-b: rgba(63, 184, 239, 0.28);
+
+  --hero-grad-a: #dff1ff;
+  --hero-grad-b: #fffdf5;
+  --hero-grad-c: #fffdf5;
+  --card-grad-a: #fffdf5;
+  --card-grad-b: #dff1ff;
+  --panel-glass: rgba(255, 253, 245, 0.75);
+  --header-bg: rgba(255, 253, 245, 0.92);
+  --skyline-img: url("assets/skyline-light.svg");
+  --inset-sheen: rgba(11, 31, 58, 0.06);
+
+  --shadow: 0 10px 26px rgba(11, 31, 58, 0.10);
+  --shadow-hover: 0 16px 36px rgba(11, 31, 58, 0.16);
 }
 
 * {
@@ -47,6 +100,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 img {
@@ -132,9 +186,10 @@ p {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(5, 7, 15, 0.9);
+  background: var(--header-bg);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .nav-wrap {
@@ -143,7 +198,7 @@ p {
   justify-content: space-between;
   padding-top: 14px;
   padding-bottom: 14px;
-  gap: 20px;
+  gap: 16px;
 }
 
 .logo {
@@ -156,7 +211,7 @@ p {
 
 .logo span {
   color: var(--neon-pink);
-  text-shadow: 0 0 10px rgba(255, 46, 166, 0.65);
+  text-shadow: 0 0 10px color-mix(in srgb, var(--neon-pink) 65%, transparent);
 }
 
 .main-nav {
@@ -183,6 +238,48 @@ p {
 .nav-cta {
   padding: 10px 22px;
   font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+/* ---------- Theme toggle ---------- */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.theme-toggle-track {
+  width: 50px;
+  height: 27px;
+  background: var(--bg-card-hover);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  position: relative;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.theme-toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background: var(--yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+[data-theme="light"] .theme-toggle-thumb {
+  transform: translateX(23px);
 }
 
 .hamburger {
@@ -204,7 +301,7 @@ p {
   width: 100%;
   background: var(--white);
   border-radius: 2px;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease, background 0.3s ease;
 }
 
 .hamburger.open span:nth-child(1) {
@@ -246,12 +343,13 @@ p {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(ellipse 60% 50% at 25% 0%, rgba(255, 46, 166, 0.16), transparent 60%),
-    radial-gradient(ellipse 60% 50% at 85% 10%, rgba(47, 216, 255, 0.14), transparent 55%),
-    linear-gradient(180deg, #05060d 0%, #0a1330 65%, #05060d 100%);
+    radial-gradient(ellipse 60% 50% at 25% 0%, var(--glow-a), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 85% 10%, var(--glow-b), transparent 55%),
+    linear-gradient(180deg, var(--hero-grad-a) 0%, var(--hero-grad-b) 65%, var(--hero-grad-c) 100%);
   color: var(--white);
   padding: 100px 0 260px;
   text-align: center;
+  transition: background 0.3s ease;
 }
 
 .hero::after {
@@ -261,7 +359,7 @@ p {
   right: 0;
   bottom: 0;
   height: 260px;
-  background: url("assets/skyline.svg") repeat-x bottom / auto 100%;
+  background: var(--skyline-img) repeat-x bottom / auto 100%;
   opacity: 0.9;
   pointer-events: none;
 }
@@ -275,15 +373,13 @@ p {
 
 .eyebrow {
   display: inline-block;
-  background: rgba(255, 233, 59, 0.12);
-  border: 1px solid rgba(255, 233, 59, 0.35);
-  color: var(--yellow);
+  background: var(--yellow);
+  color: #16110a;
   font-weight: 700;
   font-size: 0.85rem;
   padding: 8px 18px;
   border-radius: 999px;
   margin-bottom: 22px;
-  text-shadow: 0 0 12px rgba(255, 233, 59, 0.5);
 }
 
 .hero h1 {
@@ -291,21 +387,21 @@ p {
   font-size: clamp(2.1rem, 5.5vw, 3.3rem);
   margin-bottom: 20px;
   text-shadow:
-    0 0 8px rgba(255, 46, 166, 0.55),
-    0 0 22px rgba(255, 46, 166, 0.4),
-    0 0 50px rgba(255, 46, 166, 0.25);
+    0 0 8px color-mix(in srgb, var(--neon-pink) 55%, transparent),
+    0 0 22px color-mix(in srgb, var(--neon-pink) 40%, transparent),
+    0 0 50px color-mix(in srgb, var(--neon-pink) 25%, transparent);
 }
 
 .hero-sub {
   font-size: 1.1rem;
-  color: #c7d0ea;
+  color: var(--text-muted);
   max-width: 640px;
   margin: 0 auto 32px;
 }
 
 .hero-note {
   font-size: 0.9rem;
-  color: #8f9dc2;
+  color: var(--text-muted);
   margin-top: 18px;
   margin-bottom: 6px;
 }
@@ -315,7 +411,7 @@ p {
   color: var(--neon-cyan);
   font-weight: 600;
   margin-bottom: 0;
-  text-shadow: 0 0 10px rgba(47, 216, 255, 0.5);
+  text-shadow: 0 0 10px color-mix(in srgb, var(--neon-cyan) 50%, transparent);
 }
 
 /* ---------- Sections ---------- */
@@ -325,6 +421,7 @@ p {
 
 .section-alt {
   background: var(--bg-alt);
+  transition: background 0.3s ease;
 }
 
 .section-intro {
@@ -384,30 +481,30 @@ p {
   font-size: 1.6rem;
   border-radius: 14px;
   margin: 0 auto 16px;
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--bg-card);
   border: 2px solid var(--neon-cyan);
-  box-shadow: 0 0 8px rgba(47, 216, 255, 0.55), 0 0 20px rgba(47, 216, 255, 0.25), inset 0 0 8px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--neon-cyan) 55%, transparent), 0 0 20px color-mix(in srgb, var(--neon-cyan) 25%, transparent), inset 0 0 8px var(--inset-sheen);
 }
 
 .card:nth-child(4n+2) .card-icon,
 .feature:nth-child(4n+2) .feature-icon,
 .guide-card:nth-child(4n+2) .guide-icon {
   border-color: var(--neon-pink);
-  box-shadow: 0 0 8px rgba(255, 46, 166, 0.55), 0 0 20px rgba(255, 46, 166, 0.25), inset 0 0 8px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--neon-pink) 55%, transparent), 0 0 20px color-mix(in srgb, var(--neon-pink) 25%, transparent), inset 0 0 8px var(--inset-sheen);
 }
 
 .card:nth-child(4n+3) .card-icon,
 .feature:nth-child(4n+3) .feature-icon,
 .guide-card:nth-child(4n+3) .guide-icon {
   border-color: var(--yellow);
-  box-shadow: 0 0 8px rgba(255, 233, 59, 0.55), 0 0 20px rgba(255, 233, 59, 0.25), inset 0 0 8px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--yellow) 55%, transparent), 0 0 20px color-mix(in srgb, var(--yellow) 25%, transparent), inset 0 0 8px var(--inset-sheen);
 }
 
 .card:nth-child(4n+4) .card-icon,
 .feature:nth-child(4n+4) .feature-icon,
 .guide-card:nth-child(4n+4) .guide-icon {
   border-color: var(--neon-purple);
-  box-shadow: 0 0 8px rgba(178, 107, 255, 0.55), 0 0 20px rgba(178, 107, 255, 0.25), inset 0 0 8px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--neon-purple) 55%, transparent), 0 0 20px color-mix(in srgb, var(--neon-purple) 25%, transparent), inset 0 0 8px var(--inset-sheen);
 }
 
 /* ---------- Card grid (life in Japan questions) ---------- */
@@ -423,7 +520,7 @@ p {
   border-radius: var(--radius);
   padding: 26px 22px;
   box-shadow: var(--shadow);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.3s ease;
 }
 
 .card:hover {
@@ -451,7 +548,7 @@ p {
   border-radius: var(--radius);
   padding: 28px 24px;
   box-shadow: var(--shadow);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.3s ease;
 }
 
 .feature:hover {
@@ -493,7 +590,7 @@ p {
   flex: 1 1 220px;
   max-width: 300px;
   box-shadow: var(--shadow);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.3s ease;
 }
 
 .step:hover {
@@ -507,9 +604,9 @@ p {
   height: 42px;
   line-height: 42px;
   margin: 0 auto 16px;
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--bg-card);
   border: 2px solid var(--neon-cyan);
-  box-shadow: 0 0 10px rgba(47, 216, 255, 0.55);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--neon-cyan) 55%, transparent);
   color: var(--white);
   font-weight: 800;
   border-radius: 50%;
@@ -531,7 +628,7 @@ p {
   align-items: center;
   font-size: 1.6rem;
   color: var(--yellow);
-  text-shadow: 0 0 10px rgba(255, 233, 59, 0.5);
+  text-shadow: 0 0 10px color-mix(in srgb, var(--yellow) 50%, transparent);
   font-weight: 700;
 }
 
@@ -563,15 +660,16 @@ p {
 
 /* ---------- Premium card ---------- */
 .premium-card {
-  background: linear-gradient(160deg, #0a1330 0%, #14204a 100%);
-  border: 1px solid rgba(255, 233, 59, 0.25);
+  background: linear-gradient(160deg, var(--card-grad-a) 0%, var(--card-grad-b) 100%);
+  border: 1px solid color-mix(in srgb, var(--yellow) 25%, transparent);
   color: var(--white);
   border-radius: var(--radius);
   padding: 48px 40px;
   text-align: center;
   max-width: 720px;
   margin: 0 auto;
-  box-shadow: var(--shadow), 0 0 30px rgba(255, 233, 59, 0.08);
+  box-shadow: var(--shadow), 0 0 30px color-mix(in srgb, var(--yellow) 8%, transparent);
+  transition: background 0.3s ease;
 }
 
 .premium-card h2 {
@@ -579,7 +677,7 @@ p {
 }
 
 .premium-card p {
-  color: #c7d0ea;
+  color: var(--text-muted);
 }
 
 .premium-list {
@@ -596,12 +694,13 @@ p {
   padding-left: 26px;
   position: relative;
   font-weight: 600;
+  color: var(--text);
 }
 
 .premium-list li::before {
   content: "★";
   color: var(--yellow);
-  text-shadow: 0 0 8px rgba(255, 233, 59, 0.6);
+  text-shadow: 0 0 8px color-mix(in srgb, var(--yellow) 60%, transparent);
   position: absolute;
   left: 0;
 }
@@ -609,9 +708,9 @@ p {
 .premium-status {
   display: inline-block;
   margin-top: 12px;
-  background: rgba(255, 233, 59, 0.12);
-  border: 1px solid rgba(255, 233, 59, 0.35);
-  color: var(--yellow);
+  background: color-mix(in srgb, var(--yellow) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--yellow) 35%, transparent);
+  color: var(--yellow-dark);
   font-weight: 700;
   padding: 10px 22px;
   border-radius: 999px;
@@ -622,11 +721,12 @@ p {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(ellipse 60% 60% at 80% 0%, rgba(255, 46, 166, 0.14), transparent 60%),
-    linear-gradient(180deg, #05060d 0%, #0a1330 100%);
+    radial-gradient(ellipse 60% 60% at 80% 0%, var(--glow-a), transparent 60%),
+    linear-gradient(180deg, var(--hero-grad-a) 0%, var(--hero-grad-b) 100%);
   color: var(--white);
   padding: 90px 0;
   text-align: center;
+  transition: background 0.3s ease;
 }
 
 .final-cta h2 {
@@ -634,7 +734,7 @@ p {
 }
 
 .final-cta p {
-  color: #c7d0ea;
+  color: var(--text-muted);
   max-width: 560px;
   margin: 0 auto 36px;
 }
@@ -660,11 +760,12 @@ p {
   justify-content: center;
   gap: 40px;
   flex-wrap: wrap;
-  background: rgba(10, 15, 31, 0.7);
-  border: 1px solid rgba(47, 216, 255, 0.35);
+  background: var(--panel-glass);
+  border: 1px solid color-mix(in srgb, var(--neon-cyan) 35%, transparent);
   border-radius: var(--radius);
   padding: 32px 36px;
-  box-shadow: 0 0 30px rgba(47, 216, 255, 0.12), var(--shadow);
+  box-shadow: 0 0 30px color-mix(in srgb, var(--neon-cyan) 12%, transparent), var(--shadow);
+  transition: background 0.3s ease;
 }
 
 .check-list {
@@ -695,12 +796,12 @@ p {
   color: var(--neon-pink);
   border: 2px solid var(--neon-pink);
   border-radius: 6px;
-  box-shadow: 0 0 8px rgba(255, 46, 166, 0.5);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--neon-pink) 50%, transparent);
 }
 
 /* ---------- QR code ---------- */
 .qr-box {
-  background: var(--white);
+  background: var(--surface-white);
   border-radius: var(--radius);
   padding: 24px 28px;
   display: inline-flex;
@@ -783,8 +884,7 @@ p {
   right: 0;
   top: 0;
   font-size: 1.3rem;
-  color: var(--yellow);
-  text-shadow: 0 0 8px rgba(255, 233, 59, 0.5);
+  color: var(--yellow-dark);
   transition: transform 0.2s ease;
 }
 
@@ -811,7 +911,7 @@ p {
   border-radius: var(--radius);
   padding: 28px 24px;
   box-shadow: var(--shadow);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.3s ease;
 }
 
 a.guide-card:hover {
@@ -838,13 +938,13 @@ a.guide-card:hover {
 .guide-link {
   font-weight: 700;
   color: var(--neon-cyan);
-  text-shadow: 0 0 8px rgba(47, 216, 255, 0.4);
+  text-shadow: 0 0 8px color-mix(in srgb, var(--neon-cyan) 40%, transparent);
   font-size: 0.9rem;
 }
 
 .guide-badge {
   display: inline-block;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--bg-card-hover);
   color: var(--text-muted);
   font-weight: 700;
   font-size: 0.8rem;
@@ -894,7 +994,7 @@ a.guide-card:hover {
   font-size: 1.35rem;
   margin-top: 40px;
   color: var(--neon-cyan);
-  text-shadow: 0 0 10px rgba(47, 216, 255, 0.3);
+  text-shadow: 0 0 10px color-mix(in srgb, var(--neon-cyan) 30%, transparent);
 }
 
 .article-body h3 {
@@ -933,7 +1033,7 @@ a.guide-card:hover {
 }
 
 .article-body th {
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--bg-card);
   color: var(--white);
 }
 
@@ -984,7 +1084,7 @@ a.guide-card:hover {
 .form-field textarea:focus {
   outline: none;
   border-color: var(--neon-cyan);
-  box-shadow: 0 0 0 3px rgba(47, 216, 255, 0.15);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--neon-cyan) 15%, transparent);
 }
 
 .contact-sidebar {
@@ -1048,8 +1148,8 @@ a.guide-card:hover {
 }
 
 .tip-box {
-  background: rgba(255, 233, 59, 0.06);
-  border: 1px solid rgba(255, 233, 59, 0.3);
+  background: color-mix(in srgb, var(--yellow) 6%, transparent);
+  border: 1px solid color-mix(in srgb, var(--yellow) 30%, transparent);
   border-radius: var(--radius-sm);
   padding: 14px 18px;
   margin: 0 0 24px;
@@ -1058,15 +1158,15 @@ a.guide-card:hover {
 }
 
 .tip-box strong {
-  color: var(--yellow);
+  color: var(--yellow-dark);
 }
 
 .legal-placeholder {
-  background: rgba(255, 233, 59, 0.15);
-  border-bottom: 1px dashed rgba(255, 233, 59, 0.6);
+  background: color-mix(in srgb, var(--yellow) 15%, transparent);
+  border-bottom: 1px dashed color-mix(in srgb, var(--yellow) 60%, transparent);
   padding: 1px 4px;
   border-radius: 3px;
-  color: var(--yellow);
+  color: var(--yellow-dark);
   font-style: normal;
 }
 
@@ -1078,12 +1178,12 @@ a.guide-card:hover {
 
 .article-cta {
   background: var(--bg-card);
-  border: 1px solid rgba(255, 46, 166, 0.3);
+  border: 1px solid color-mix(in srgb, var(--neon-pink) 30%, transparent);
   border-radius: var(--radius);
   padding: 28px 24px;
   text-align: center;
   margin-top: 40px;
-  box-shadow: 0 0 24px rgba(255, 46, 166, 0.1);
+  box-shadow: 0 0 24px color-mix(in srgb, var(--neon-pink) 10%, transparent);
 }
 
 .article-cta h3 {
@@ -1106,6 +1206,7 @@ a.guide-card:hover {
 }
 
 /* ---------- Footer (FENDI-inspired: light, text-only, brand-neutral) ---------- */
+/* Intentionally independent of the site theme toggle — always light. */
 .site-footer {
   background: #FAFAFA;
   color: #333333;
