@@ -1163,6 +1163,9 @@ a.guide-card:hover {
 }
 
 .article-body table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   width: 100%;
   border-collapse: collapse;
   margin: 0 0 24px;
@@ -1537,6 +1540,48 @@ a.guide-card:hover {
 @media (max-width: 600px) {
   .section {
     padding: 56px 0;
+  }
+
+  .site-header {
+    padding: 14px 10px 0;
+  }
+
+  .nav-wrap {
+    padding: 8px 8px 8px 10px;
+    gap: 8px;
+  }
+
+  .logo {
+    gap: 8px;
+  }
+
+  .logo-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .logo-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .logo-title {
+    font-size: 0.88rem;
+  }
+
+  .logo-tagline {
+    display: none;
+  }
+
+  .theme-toggle {
+    width: 36px;
+    height: 36px;
+    font-size: 0.95rem;
+  }
+
+  .hamburger {
+    width: 36px;
+    height: 36px;
   }
 
   .hero {
