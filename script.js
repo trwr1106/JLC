@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function () {
      <head> (before paint, to avoid a flash) — this just wires up the
      button and keeps it in sync. */
   var themeToggle = document.getElementById('themeToggle');
-  var themeToggleThumb = themeToggle ? themeToggle.querySelector('.theme-toggle-thumb') : null;
 
   function isLightTheme() {
     return document.documentElement.getAttribute('data-theme') === 'light';
@@ -21,9 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var light = isLightTheme();
     themeToggle.setAttribute('aria-pressed', light ? 'true' : 'false');
     themeToggle.setAttribute('aria-label', light ? 'Switch to dark theme' : 'Switch to light theme');
-    if (themeToggleThumb) {
-      themeToggleThumb.textContent = light ? '☀️' : '🌙';
-    }
+    themeToggle.textContent = light ? '☀️' : '🌙';
   }
 
   if (themeToggle) {

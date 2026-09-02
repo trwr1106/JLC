@@ -124,10 +124,16 @@
 <!-- ===================== HEADER / NAV ===================== -->
 <header class="site-header">
   <div class="container nav-wrap">
-    <a href="#hero" class="logo">Japan Life <span>Community</span></a>
+    <a href="#hero" class="logo">
+      <span class="logo-icon"><svg viewBox="-10 -10 20 20" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round"><path d="M0,0 C-3,-2 -3,-6 -1,-8 L0,-6.3 L1,-8 C3,-6 3,-2 0,0 Z"/><path d="M0,0 C-3,-2 -3,-6 -1,-8 L0,-6.3 L1,-8 C3,-6 3,-2 0,0 Z" transform="rotate(72)"/><path d="M0,0 C-3,-2 -3,-6 -1,-8 L0,-6.3 L1,-8 C3,-6 3,-2 0,0 Z" transform="rotate(144)"/><path d="M0,0 C-3,-2 -3,-6 -1,-8 L0,-6.3 L1,-8 C3,-6 3,-2 0,0 Z" transform="rotate(216)"/><path d="M0,0 C-3,-2 -3,-6 -1,-8 L0,-6.3 L1,-8 C3,-6 3,-2 0,0 Z" transform="rotate(288)"/></svg></span>
+      <span class="logo-text">
+        <span class="logo-title">Japan Life <span>Community</span></span>
+        <span class="logo-tagline">Support. Share. Belong.</span>
+      </span>
+    </a>
 
     <nav class="main-nav" id="main-nav">
-      <a href="#hero">Home</a>
+      <a href="#hero" class="active">Home</a>
       <a href="#community">Community</a>
       <a href="#life-in-japan">Life in Japan</a>
       <a href="#guides">Guides</a>
@@ -135,9 +141,8 @@
       <a href="#faq">FAQ</a>
       <a href="https://discord.gg/jplc" target="_blank" rel="noopener">Join Discord</a>
     </nav>
-    <button class="theme-toggle" id="themeToggle" aria-label="Switch to light theme" aria-pressed="false">
-      <span class="theme-toggle-track"><span class="theme-toggle-thumb">🌙</span></span>
-    </button>
+    <span class="nav-divider"></span>
+    <button class="theme-toggle" id="themeToggle" aria-label="Switch to light theme" aria-pressed="false">🌙</button>
     <a href="https://discord.gg/jplc" target="_blank" rel="noopener" class="btn btn-yellow nav-cta">Join Free</a>
 
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
@@ -147,7 +152,7 @@
 
   <!-- Mobile menu -->
   <nav class="mobile-nav" id="mobile-nav">
-    <a href="#hero">Home</a>
+    <a href="#hero" class="active">Home</a>
     <a href="#community">Community</a>
     <a href="#life-in-japan">Life in Japan</a>
     <a href="#guides">Guides</a>
@@ -163,17 +168,56 @@
 <!-- ===================== HERO ===================== -->
 <section class="hero" id="hero">
   <div class="container hero-inner fade-in">
-    <p class="eyebrow">🇯🇵 A Free Community for Foreigners in Japan</p>
+    <p class="eyebrow"><span class="eyebrow-icon">♥</span> A Free Community for Foreigners in Japan</p>
     <h1>Life in Japan Doesn't Have to Be Complicated.</h1>
     <p class="hero-sub">
       Whether you're planning to move to Japan, studying here, or already living here,
       join our community to ask questions, meet people, and get help with everyday life in Japan.
     </p>
     <a href="https://discord.gg/jplc" target="_blank" rel="noopener" class="btn btn-yellow btn-lg">
-      Join Our Free Community
+      👥 Join Our Free Community →
     </a>
-    <p class="hero-note">Free to join. Ask questions, connect with others, and get the support you need.</p>
-    <p class="hero-welcome">Living in Japan? Planning to move here? You're welcome. 👋</p>
+    <div class="hero-links">
+      <a href="#faq">💬 Ask Questions</a>
+      <span class="hero-links-divider"></span>
+      <a href="#community">👥 Meet &amp; Connect</a>
+      <span class="hero-links-divider"></span>
+      <a href="#support">🛡️ Get Trusted Support</a>
+    </div>
+    <p class="hero-note">✨ Free to join. Real people. Helpful answers. <a href="#faq" class="hero-note-link">You're not alone here.</a></p>
+  </div>
+
+  <div class="hero-features">
+    <div class="hero-features-inner">
+      <div class="hero-feature">
+        <span class="hero-feature-icon hf-1">👤</span>
+        <div>
+          <h4>For Foreigners</h4>
+          <p>Living in or planning to move to Japan</p>
+        </div>
+      </div>
+      <div class="hero-feature">
+        <span class="hero-feature-icon hf-2">💬</span>
+        <div>
+          <h4>All About Life in Japan</h4>
+          <p>Work, study, visa, housing, culture, and more</p>
+        </div>
+      </div>
+      <div class="hero-feature">
+        <span class="hero-feature-icon hf-3">🔒</span>
+        <div>
+          <h4>Safe &amp; Respectful Space</h4>
+          <p>Kindness, privacy, and mutual respect</p>
+        </div>
+      </div>
+      <div class="hero-feature">
+        <span class="hero-feature-icon hf-4">❤️</span>
+        <div>
+          <h4>Always Free</h4>
+          <p>100% free to join and participate</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
