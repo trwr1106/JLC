@@ -1352,6 +1352,19 @@ a.guide-card:hover {
   font-weight: 600;
 }
 
+.article-sources {
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.article-sources a {
+  color: var(--neon-cyan);
+}
+
 /* ---------- Footer (FENDI-inspired: light, text-only, brand-neutral) ---------- */
 /* Intentionally independent of the site theme toggle — always light. */
 .site-footer {

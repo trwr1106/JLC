@@ -67,6 +67,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://jlc-one.vercel.app/guides/pension-and-tax.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jlc-one.vercel.app/guides/driver-license-conversion.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jlc-one.vercel.app/guides/specified-residence-card.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://jlc-one.vercel.app/about</loc>
     <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
