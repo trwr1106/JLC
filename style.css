@@ -1365,24 +1365,6 @@ a.guide-card:hover {
   color: var(--neon-cyan);
 }
 
-.jlc-help-note {
-  font-style: italic;
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  max-width: 640px;
-  margin: 32px auto 0;
-  padding-top: 24px;
-  border-top: 1px solid var(--border);
-}
-
-.jlc-help-note a,
-.jlc-help-note strong {
-  color: var(--neon-cyan);
-  font-weight: 600;
-  font-style: normal;
-}
-
 /* ---------- Footer (FENDI-inspired: light, text-only, brand-neutral) ---------- */
 /* Intentionally independent of the site theme toggle — always light. */
 .site-footer {
