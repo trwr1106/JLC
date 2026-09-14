@@ -85,6 +85,42 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://jlc-one.vercel.app/guides/childrens-education.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jlc-one.vercel.app/guides/disaster-preparedness.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jlc-one.vercel.app/guides/job-hunting.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jlc-one.vercel.app/guides/postal-parcel-delivery.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jlc-one.vercel.app/guides/refused-at-hospital.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jlc-one.vercel.app/guides/understanding-taxes.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://jlc-one.vercel.app/about</loc>
     <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
